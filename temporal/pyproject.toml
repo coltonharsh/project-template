@@ -14,8 +14,15 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
   "pytest",
+  "pytest-asyncio",
   "pytest-json-report"
 ]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+pythonpath = ["."]
+testpaths = ["tests"]
+markers = ["integration: requires a running local Supabase stack"]
 
 [build-system]
 requires = ["setuptools>=61.0"]
