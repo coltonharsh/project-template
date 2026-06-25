@@ -25,6 +25,7 @@ supabase/.env
 # Python
 __pycache__/
 *.pyc
+*.egg-info/
 
 # OS/editor
 .DS_Store
@@ -39,4 +40,4 @@ temporal/worker/node_modules.bak*
 
 volaris_test_data-main
 
-*.txt
+*.txt.env
