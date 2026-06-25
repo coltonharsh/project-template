@@ -25,6 +25,7 @@ supabase/.env
 # Python
 __pycache__/
 *.pyc
+*.egg-info/
 
 # OS/editor
 .DS_Store
