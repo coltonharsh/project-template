@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "vitest run"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.11",
@@ -37,6 +38,10 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "jsdom": "^25.0.1",
+    "vitest": "^2.1.8",
     "@tanstack/router-devtools": "^1.139.14",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^24.10.1",

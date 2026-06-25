@@ -46,7 +46,7 @@ function StatusDot({ status }: { status: Session['status'] }) {
   return <span className={`inline-block w-2 h-2 rounded-full ${color}`} />;
 }
 
-function MeetingNotesPage() {
+export function MeetingNotesPage() {
   const [notes, setNotes] = useState('');
   const [currentSessionId, setCurrentSessionId] = useState<string | null>(null);
   const queryClient = useQueryClient();
@@ -178,9 +178,14 @@ function MeetingNotesPage() {
           )}
 
           {itemsQuery.data?.length === 0 && (
-            <p className="text-sm text-muted-foreground">
-              No action items found in these notes.
-            </p>
+            <div className="rounded-lg border border-border bg-muted/30 px-5 py-4 space-y-1">
+              <p className="text-sm font-medium text-foreground">No follow-ups detected</p>
+              <p className="text-sm text-muted-foreground">
+                No action items were found in these notes. Try including who is doing
+                what and by when — for example:{' '}
+                <span className="italic">"Alice will fix the login bug by Friday."</span>
+              </p>
+            </div>
           )}
 
           {itemsQuery.data && itemsQuery.data.length > 0 && (
