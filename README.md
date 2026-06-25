@@ -4,7 +4,7 @@
 > run regenerates this branch. The machine-readable source of truth is [`runs.jsonl`](./runs.jsonl).
 > Deployed-environment E2E trends live separately on the [`e2e-history`](../../tree/e2e-history) branch.
 
-**Last updated:** — · 2 records · suites: `helm`, `seed`
+**Last updated:** 2026-06-25 15:45Z · 6 records · suites: `helm`, `seed`, `temporal`, `unit`
 
 ![trend](./trend.svg)
 
@@ -12,14 +12,20 @@
 
 | Suite | Latest | When (UTC) | Pass 24h | Pass 7d | Green streak | Runs |
 |---|---|---|--:|--:|--:|--:|
-| `helm` | ❌ `failed` [↗](https://github.com/coltonharsh/project-template/actions/runs/28118385079) | — | — | — | 0 | 1 |
-| `seed` | ❌ `failed` [↗](https://github.com/coltonharsh/project-template/actions/runs/28118385079) | — | — | — | 0 | 1 |
+| `helm` | ❌ `failed` [↗](https://github.com/coltonharsh/project-template/actions/runs/28182358053) | — | — | — | 0 | 2 |
+| `seed` | ❌ `failed` [↗](https://github.com/coltonharsh/project-template/actions/runs/28182358053) | — | — | — | 0 | 2 |
+| `temporal` | ✅ `passed` [↗](https://github.com/coltonharsh/project-template/actions/runs/28182358053) | 2026-06-25 15:45Z | 100% (1) | 100% (1) | 1 | 1 |
+| `unit` | ✅ `passed` [↗](https://github.com/coltonharsh/project-template/actions/runs/28182358053) | 2026-06-25 15:45Z | 100% (1) | 100% (1) | 1 | 1 |
 
 
 ## Recent runs
 
 | When (UTC) | Suite | Result | Pass | Fail | Skip | Duration | Commit | Run |
 |---|---|---|--:|--:|--:|--:|---|---|
+| 2026-06-25 15:45Z | `unit` | ✅ passed | 5 | 0 | 0 | 0.1s | `2a4bf08` | [#9](https://github.com/coltonharsh/project-template/actions/runs/28182358053) |
+| 2026-06-25 15:45Z | `temporal` | ✅ passed | 29 | 0 | 2 | 2.6s | `2a4bf08` | [#9](https://github.com/coltonharsh/project-template/actions/runs/28182358053) |
+| — | `seed` | ❌ failed | 0 | 1 | 0 | — | `2a4bf08` | [#9](https://github.com/coltonharsh/project-template/actions/runs/28182358053) |
+| — | `helm` | ❌ failed | 151 | 2 | 0 | — | `2a4bf08` | [#9](https://github.com/coltonharsh/project-template/actions/runs/28182358053) |
 | — | `seed` | ❌ failed | 0 | 1 | 0 | — | `8d53949` | [#1](https://github.com/coltonharsh/project-template/actions/runs/28118385079) |
 | — | `helm` | ❌ failed | 151 | 2 | 0 | — | `8d53949` | [#1](https://github.com/coltonharsh/project-template/actions/runs/28118385079) |
 
