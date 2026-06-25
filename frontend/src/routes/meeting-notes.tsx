@@ -183,7 +183,7 @@ export function MeetingNotesPage() {
               <p className="text-sm text-muted-foreground">
                 No action items were found in these notes. Try including who is doing
                 what and by when — for example:{' '}
-                <span className="italic">"Alice will fix the login bug by Friday."</span>
+                <span className="italic">&ldquo;Alice will fix the login bug by Friday.&rdquo;</span>
               </p>
             </div>
           )}
