@@ -76,6 +76,7 @@ services:
       - TEMPORAL_TASK_QUEUE=${TEMPORAL_TASK_QUEUE:-main}
       - SUPABASE_URL=${SUPABASE_URL:-http://host.docker.internal:54321}
       - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY:-dev-service-role-key}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
 
   frontend:
     build:
@@ -88,8 +89,25 @@ services:
       - VITE_SUPABASE_URL=${VITE_SUPABASE_URL:-http://localhost:54321}
       - VITE_SUPABASE_ANON_KEY=${VITE_SUPABASE_ANON_KEY:-dev-anon-key}
       - VITE_API_URL=${VITE_API_URL:-http://localhost:54321/functions/v1}
+      - VITE_OPS_API_URL=${VITE_OPS_API_URL:-http://localhost:8000}
     ports:
       - "3000:3000"
+
+  ops-api:
+    build: ./ops-api
+    container_name: ops-api
+    restart: unless-stopped
+    depends_on:
+      temporal:
+        condition: service_started
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      - TEMPORAL_ADDRESS=${TEMPORAL_ADDRESS:-temporal:7233}
+      - SUPABASE_URL=${SUPABASE_URL:-http://host.docker.internal:54321}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY:-dev-service-role-key}
+    ports:
+      - "8000:8000"
 
 volumes:
   temporal-db-data:

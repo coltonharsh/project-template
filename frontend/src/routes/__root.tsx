@@ -5,7 +5,7 @@
 import { createRootRoute, Outlet, Link, useLocation } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { cn } from '@/lib/utils';
-import { Home, Box, Users, Building2, FolderOpen, FileQuestion, ClipboardCheck, FileText, UserCircle, UsersRound } from 'lucide-react';
+import { Home, Box, Users, Building2, FolderOpen, FileQuestion, ClipboardCheck, FileText, UserCircle, UsersRound, Sparkles } from 'lucide-react';
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -75,6 +75,26 @@ function Sidebar() {
           <Home className="h-4 w-4" />
           Dashboard
         </Link>
+
+        <div className="pt-4">
+          <h3 className="px-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+            Features
+          </h3>
+          <div className="mt-2 space-y-1">
+            <Link
+              to="/meeting-notes"
+              className={cn(
+                'flex items-center gap-3 px-3 py-2 rounded-lg transition-colors',
+                location.pathname === '/meeting-notes'
+                  ? 'bg-primary text-primary-foreground'
+                  : 'hover:bg-muted'
+              )}
+            >
+              <Sparkles className="h-4 w-4" />
+              Meeting Notes
+            </Link>
+          </div>
+        </div>
 
         <div className="pt-4">
           <h3 className="px-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
